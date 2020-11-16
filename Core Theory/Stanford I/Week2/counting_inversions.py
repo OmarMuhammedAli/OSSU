@@ -14,7 +14,6 @@ def _sort_and_count(a, p, r):
 
 def merge_and_countsplit(a, p, q, r):
     n1, n2 = q - p + 1, r - q
-    print(n1, n2)
     left, right = a[p: q+1], a[q+1: r+1]
     end = max(left[n1 - 1], right[n2 - 1]) + 1
     left.append(end)
@@ -33,7 +32,7 @@ def merge_and_countsplit(a, p, q, r):
     return count 
 
 def main():
-    lst = [100 - i for i in range(100)]
+    lst = [int(line) for line in open('testcases.txt')]
     print(sort_and_count(lst))
 
 if __name__ == "__main__":
